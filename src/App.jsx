@@ -1,15 +1,12 @@
-import { SimpleCard } from 'components/simpleCard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from 'pages/home';
 
 const App = () => (
-  <div className='lg:flex justify-center'>
-    <div className='p-12'>
-      <SimpleCard
-        title='Kai David Albornoz Madrigal'
-        text1='Español'
-        text2='Inglés'
-      />
-    </div>
-  </div>
+  <BrowserRouter>
+    <Routes>
+      <Route index element={<Home />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;
