@@ -1,10 +1,11 @@
 import React from 'react';
 import { SocialNetwork } from 'components/socialNetwork';
+import { Title } from 'components/title';
 
 export const SimpleCard = ({ title = 'Titulo' }) => (
   <div className='max-w-sm rounded overflow-hidden shadow-lg bg-red-500'>
     <div className='px-6 py-4'>
-      <div className='font-bold text-xl mb-2 text-center'>{title}</div>
+      <Title title={title} />
       <div className='px-6 py-4 columns-2'>
         <div className='columns-2'>
           <SocialNetwork
