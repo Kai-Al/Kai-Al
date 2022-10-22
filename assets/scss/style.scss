@@ -1,0 +1,135 @@
+body {
+  color: black;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+    background-size: cover;
+    animation: backgroundZoomAnimate 10s forwards;
+  }
+}
+
+@keyframes backgroundZoomAnimate {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.profile-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 650px;
+  position: relative;
+  backdrop-filter: blur(15px);
+  border: 2px solid #ffffff40;
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media screen and (max-width: 768px) {
+    width: auto;
+  }
+  &-img img {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #ffffff40;
+  }
+
+  &-desc {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-name {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #000;
+    }
+    &-job {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #000;
+    }
+  }
+  &-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      color: black;
+      position: relative;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #ffffff40;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      &:hover {
+        background: #ffffff80;
+        backdrop-filter: blur(15px);
+        transform: translateY(-5px);
+      }
+      &.facebook {
+        background: #3b5998;
+        color: #fff;
+        box-shadow: 0 4 30px rgba(59, 89, 152, 0.2);
+      }
+      &.twitter {
+        background: #1da1f2;
+        color: #fff;
+        box-shadow: 0 4 30px rgba(29, 161, 242, 0.2);
+      }
+      &.instagram {
+        background: linear-gradient(
+          45deg,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d,
+          #f56040,
+          #f77737,
+          #fcaf45,
+          #ffdc80
+        );
+        color: #fff;
+        box-shadow: 0 4 30px rgba(228, 64, 95, 0.2);
+      }
+      &.linkedin {
+        background: #0077b5;
+        color: #fff;
+        box-shadow: 0 4 30px rgba(0, 119, 181, 0.2);
+      }
+      &.github {
+        background: #333;
+        color: #fff;
+        box-shadow: 0 4 30px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
